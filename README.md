@@ -48,3 +48,11 @@ http://localhost:(端口)/LaraAdmin/public/login
 管理员帐号：admin，密码：123456
 
 **Enjoy yourself!**
+
+## 进行开发 ##
+本项目使用了prettus/l5-repository扩展包，可以通过命令生成model，controller等，开发前可运行命令新建模型控制器等。更多命令查看官方文档[prettus/l5-repository](https://packagist.org/packages/prettus/l5-repository)
+```
+php artisan make:entity
+```
+> 注意：执行上面代码应该会报错失败。因为I5-repository支持到laravel5.3，5.4有个laravel的底层库文件修改了名称，导致引用不到。需要到目录 \vender\prettus\I5-repository\src\Prettus\Repository\Generators\Generator.php 修改引用的文件 AppNamespaceDetectorTrait 为 DetectsApplicationNamespace 
+> 这个错误必然出现，除非作者更新仓库。所以会尽快提示作者修复这个问题。
